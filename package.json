@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:all": "pnpm --recursive run build",
+    "dev": "pnpm run build:all && pnpm --parallel --stream run dev",
+    "build:all": "pnpm --recursive --stream run build",
     "test:all": "pnpm --recursive --parallel run test:unit",
     "type:check:all": "pnpm --recursive --parallel run type-check",
     "lint:all": "pnpm --recursive --parallel run lint"

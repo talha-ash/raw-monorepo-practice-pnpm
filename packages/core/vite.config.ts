@@ -15,10 +15,10 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'index',
+      entry: resolve(__dirname, 'src/main.ts'),
+      name: 'main',
       // the proper extensions will be added
-      fileName: 'index',
+      fileName: 'main',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
