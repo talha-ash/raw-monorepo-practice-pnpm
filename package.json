@@ -1,0 +1,49 @@
+{
+  "name": "raw-mono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:all": "pnpm --recursive run build",
+    "test:all": "pnpm --recursive --parallel run test:unit",
+    "type:check:all": "pnpm --recursive --parallel run type-check",
+    "lint:all": "pnpm --recursive --parallel run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@eslint/css": "^0.10.0",
+    "@eslint/js": "^9.32.0",
+    "@eslint/markdown": "^7.1.0",
+    "@tanstack/eslint-config": "^0.3.0",
+    "@types/node": "^24.2.0",
+    "@types/react": "catalog:react-next",
+    "@types/react-dom": "catalog:react-next",
+    "@vitejs/plugin-react": "^4.7.0",
+    "eslint": "catalog:react-next",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "msw": "^2.10.4",
+    "prettier": "catalog:react-next",
+    "typescript": "catalog:react-next",
+    "typescript-eslint": "^8.39.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "catalog:react-next"
+  },
+  "dependencies": {
+    "@tanstack/react-form": "catalog:react-next",
+    "@tanstack/react-query": "catalog:react-next",
+    "axios": "catalog:react-next",
+    "graphql-request": "catalog:react-next",
+    "mutative": "catalog:react-next",
+    "neverthrow": "catalog:react-next",
+    "react": "catalog:react-next",
+    "react-dom": "catalog:react-next",
+    "valibot": "catalog:react-next",
+    "zustand": "catalog:react-next",
+    "zustand-mutative": "catalog:react-next"
+  }
+}

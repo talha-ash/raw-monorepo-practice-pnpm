@@ -1,0 +1,20 @@
+By default deps install in thier package.
+we can use hoist common deps to root module using -w when install libs
+/////////////////////////////////////////
+Use catalog to keep same version of deps across packages
+/////////////////////////////////////////
+"verbatimModuleSyntax"
+You are required to use import type and export type when importing or exporting only types.
+"noEmit"
+No js emit on tsc
+"allowImportingTsExtensions"
+When this option is enabled, you can write import statements that directly reference TypeScript files with their extensions, for example: import { someFunction } from './myModule.ts';
+
+Requires noEmit or emitDeclarationOnly:
+This flag can only be used when either noEmit or emitDeclarationOnly is set to true. This is because if TypeScript were to emit JavaScript files, these .ts import paths would not be valid in the resulting JavaScript output, as JavaScript runtimes expect .js or similar extensions for module resolution
+
+Bundler responsibility to resolve paths
+/////////////////////////////////////////
+You have to explicit about lib deps . like which one go to package and root. globals libs go to root package
+json. and package specific go to package package.json. . Use --filter to specify which package to install deps in.
+/////////////////////////////////////////

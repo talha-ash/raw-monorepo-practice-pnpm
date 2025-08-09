@@ -1,0 +1,6 @@
+export { usePrintUser } from './usePrintUser'
+export type { User } from './usePrintUser'
+export * as CoreShared from '@/shared/index'
+export * as AuthContext from '@/contexts/auth/publicApi'
+export type *  from '@/contexts/auth/publicTypes'
+export type *  from '@/shared/types'

@@ -1,0 +1,59 @@
+import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
+import dts from 'vite-plugin-dts'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    dts({
+      tsconfigPath: './tsconfig.json',
+      exclude: ['**/*.test.*', '**/*.stories.*', '**/__test__/*'],
+    }),
+  ],
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'index',
+      // the proper extensions will be added
+      fileName: 'index',
+    },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: [
+        'react',
+        'zustand',
+        'valibot',
+        'axios',
+        '@tanstack/react-query',
+      ],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          react: 'React',
+          zustand: 'Zustand',
+          valibot: 'Valibot',
+          axios: 'Axios',
+        },
+      },
+    },
+    // Generate sourcemaps
+    sourcemap: true,
+    // Clean output directory
+    emptyOutDir: true,
+  },
+  // resolve: {
+  //     alias: {
+  //         '~src': resolve(__dirname, 'src'),
+  //         '~shared': resolve(__dirname, 'src/shared'),
+  //     },
+  // },
+  // test: {
+  //   include: ['src/**/*.test.ts'],
+  //   exclude: ['**/*.int.test.ts'],
+  // },
+})
