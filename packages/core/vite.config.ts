@@ -38,6 +38,7 @@ export default defineConfig({
           zustand: 'Zustand',
           valibot: 'Valibot',
           axios: 'Axios',
+          '@tanstack/react-query': 'ReactQuery',
         },
       },
     },

@@ -6,7 +6,7 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import { resolve } from 'node:path'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     TanStackRouterVite({ autoCodeSplitting: true }),
     viteReact(),
@@ -19,8 +19,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      core: resolve(__dirname, '../../packages/core/src/main.ts'),
-      '~core': resolve(__dirname, '../../packages/core/src'),
+      ...(command === 'serve'
+        ? { core: resolve(__dirname, '../../packages/core/src/main.ts') }
+        : {}),
+      ...(command === 'serve'
+        ? { '~core': resolve(__dirname, '../../packages/core/src') }
+        : {}),
     },
   },
-})
+}))

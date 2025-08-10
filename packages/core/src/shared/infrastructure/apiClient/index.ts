@@ -3,27 +3,27 @@ import axios, {
   type AxiosRequestConfig,
   type AxiosResponse,
   type InternalAxiosRequestConfig,
-  AxiosHeaders,
+  type AxiosHeaders,
   isAxiosError,
 } from 'axios'
-import type {
-  IHttpClient,
-  IHttpRequestConfig,
-  IHttpError,
-  IHttpResponse,
-  AxiosErrorType,
-  INetworkError,
-  IRequestError,
-  IRequestUnknownError,
-} from './types'
 import { err, ok, Result, ResultAsync } from 'neverthrow'
+import type { User } from '~core/contexts/auth/domain'
 import {
   AXIOS_ERROR_HTTP,
   AXIOS_ERROR_NETWORK,
   AXIOS_ERROR_REQUEST,
   AXIOS_ERROR_UNKNOWN,
 } from './constants'
-import type { User } from '~core/contexts/auth/domain'
+import type {
+  AxiosErrorType,
+  IHttpClient,
+  IHttpError,
+  IHttpRequestConfig,
+  IHttpResponse,
+  INetworkError,
+  IRequestError,
+  IRequestUnknownError,
+} from './types'
 
 type RefreshPromiseResolveType = Result<{ index: number }, { index: number }>
 
