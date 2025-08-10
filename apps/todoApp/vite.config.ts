@@ -20,6 +20,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src'),
       core: resolve(__dirname, '../../packages/core/src/main.ts'),
+      '~core': resolve(__dirname, '../../packages/core/src'),
     },
   },
 })

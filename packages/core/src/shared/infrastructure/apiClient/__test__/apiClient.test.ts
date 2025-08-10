@@ -12,7 +12,7 @@ import {
   vi,
   type MockedObject,
 } from 'vitest'
-import { BASE_URL } from '@/shared/constants'
+import { BASE_URL } from '~core/shared/constants'
 import {
   apiClientFactory,
   type AxiosHttpClient,

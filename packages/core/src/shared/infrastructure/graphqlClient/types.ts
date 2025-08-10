@@ -1,4 +1,4 @@
-import type { User } from '@/contexts/auth/domain'
+import type { User } from '~core/contexts/auth/domain'
 import type { Result, ResultAsync } from 'neverthrow'
 
 export interface INetworkError {

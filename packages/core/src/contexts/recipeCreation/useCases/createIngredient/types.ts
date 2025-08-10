@@ -1,5 +1,5 @@
-import type { Ingredient } from '@/contexts/recipeCreation/domain/ingredient';
+import type { Ingredient } from '~core/contexts/recipeCreation/domain/ingredient'
 
 export interface ICreateIngredientResponse {
-    ingredient: Ingredient;
+  ingredient: Ingredient
 }
